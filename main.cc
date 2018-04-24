@@ -92,6 +92,11 @@ int main()
 	
 	char magic_number[10];
 	sprintf(magic_number,"%x",magicNumber);
+	string s = magic_number;
+	for (unsigned int i = 0; i < s.length() ; i++)
+	{
+		magic_number[i] = toupper(magic_number[i]);
+	}
 	string version_number = to_string(versionNumber);
 	string num_records = to_string(numRecords);
 	string a = "Magic : 0x" + string(magic_number);
