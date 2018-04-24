@@ -1,7 +1,7 @@
 //Name: Ishaan Arya
 //NetID: ixa160130
 //Program6
-
+//CS 3377.502
 #include <iostream>
 #include <string>
 #include <stdio.h>
@@ -91,9 +91,9 @@ int main()
 	unsigned long long numRecords = myHeader->numRecords;
 	
 	char magic_number[10];
-	sprintf(magic_number,"%x",magicNumber);
+	sprintf(magic_number,"%x",magicNumber);//convert to hex
 	string s = magic_number;
-	for (unsigned int i = 0; i < s.length() ; i++)
+	for (unsigned int i = 0; i < s.length() ; i++) //comvert to uppercase
 	{
 		magic_number[i] = toupper(magic_number[i]);
 	}
@@ -106,18 +106,19 @@ int main()
 	setCDKMatrixCell(myMatrix, 1, 3, num_records.c_str());
 	
 	BinaryFileRecord *myRecord = new BinaryFileRecord();
-
+	
+	//reading the records from the binary file and displaying it in the matrix
 	for (int i = 2; i <= int(numRecords) + 1; i++)
 	{
 		binInFile.read((char*)myRecord,sizeof(BinaryFileRecord));
 		char* str = myRecord->stringBuffer;
 		int length = string(str).length();
-		string len = to_string(length);
-		setCDKMatrixCell(myMatrix, i, 1, len.c_str());
+		string len = to_string(length);//we need string to write into matrix
+		setCDKMatrixCell(myMatrix, i, 1, len.c_str()); //putting it in matrix
 		setCDKMatrixCell(myMatrix, i, 2, str);
 	}
 	
-	binInFile.close();
+	binInFile.close(); //closing the file
 	
 	drawCDKMatrix(myMatrix, true);    /* required  */
 

@@ -7,7 +7,7 @@ PROJECTNAME = Program6
 
 #seting compiler and flags
 CXX = g++
-CFLAGS = -Wall -std=c++11 -Wsign-compare
+CFLAGS = -Wall -std=c++11 
 
 #library flags
 LDFLAGS = -L /scratch/perkins/lib
