@@ -97,8 +97,8 @@ int main()
 	{
 		magic_number[i] = toupper(magic_number[i]);
 	}
-	string version_number = to_string(versionNumber);
-	string num_records = to_string(numRecords);
+	string version_number = "Version: " + to_string(versionNumber);
+	string num_records = "NumRecords: " + to_string(numRecords);
 	string a = "Magic : 0x" + string(magic_number);
 
 	setCDKMatrixCell(myMatrix, 1, 1, a.c_str());
@@ -113,7 +113,7 @@ int main()
 		binInFile.read((char*)myRecord,sizeof(BinaryFileRecord));
 		char* str = myRecord->stringBuffer;
 		int length = string(str).length();
-		string len = to_string(length);//we need string to write into matrix
+		string len = "strlen: " + to_string(length);//we need string to write into matrix
 		setCDKMatrixCell(myMatrix, i, 1, len.c_str()); //putting it in matrix
 		setCDKMatrixCell(myMatrix, i, 2, str);
 	}
