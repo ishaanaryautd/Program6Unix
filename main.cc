@@ -1,6 +1,6 @@
 //Name: Ishaan Arya
 //NetID: ixa160130
-//Program6
+//Program6.
 //CS 3377.502
 #include <iostream>
 #include <string>
